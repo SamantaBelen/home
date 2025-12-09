@@ -1,0 +1,140 @@
+/* ------------------------------
+   GENERAL LAYOUT
+------------------------------ */
+
+.layout-wrapper {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+.sidebar {
+    width: 260px;
+    flex-shrink: 0;
+}
+
+.page {
+    flex: 1;
+}
+
+/* ------------------------------
+   SIDEBAR ELEMENTS
+------------------------------ */
+
+.author__avatar {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.author__name {
+    font-size: 22px;
+    margin-top: 10px;
+}
+
+.author__bio {
+    margin-bottom: 10px;
+}
+
+.author__urls li {
+    list-style: none;
+    margin-bottom: 5px;
+}
+
+/* ------------------------------
+   HIGHLIGHT GRID
+------------------------------ */
+
+.highlight-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.highlight-item {
+    position: relative;
+    cursor: pointer;
+}
+
+.highlight-item img {
+    width: 260px;
+    border-radius: 6px;
+    transition: transform .2s, box-shadow .2s;
+}
+
+.highlight-item img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+.image-text {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 6px 12px;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    border-radius: 4px;
+    display: none;
+}
+
+.highlight-item:hover .image-text {
+    display: block;
+}
+
+/* ------------------------------
+   BUTTON
+------------------------------ */
+
+#toggle-btn {
+    background-color: #007BFF;
+    color: white;
+    padding: 15px 30px;
+    font-size: 17px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    margin: 20px auto;
+    display: inline-block;
+}
+
+/* ------------------------------
+   RESPONSIVE DESIGN
+------------------------------ */
+
+/* 📱 MOBILE LAYOUT — Sidebar becomes horizontal */
+@media (max-width: 900px) {
+    .layout-wrapper {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        text-align: center;
+    }
+
+    .highlight-grid {
+        justify-content: center;
+    }
+
+    .highlight-item img {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* 📱 Very small screens */
+@media (max-width: 500px) {
+    #toggle-btn {
+        width: 100%;
+    }
+}
+
+/* Hidden class for JS toggle */
+.hidden {
+    display: none;
+}
+
+.center {
+    text-align: center;
+}
